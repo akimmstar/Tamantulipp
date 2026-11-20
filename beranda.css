@@ -1,0 +1,325 @@
+* {
+    box-sizing: border-box
+}
+
+:root {
+    color-scheme: dark;
+    --cream: #ffebd0;
+    --ink: #101c2b
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: #111d30;
+    color: var(--cream);
+    font-family: Georgia, serif
+}
+
+.sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 72% 24%, #424656 0, transparent 43%), linear-gradient(#101a2c, #263747 72%, #35494c)
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #ffebcb;
+    border-radius: 50%;
+    opacity: .5;
+    animation: drift var(--period) ease-in-out infinite alternate
+}
+
+.star.glint {
+    width: 9px;
+    height: 12px;
+    clip-path: polygon(50% 0, 59% 40%, 100% 50%, 59% 58%, 50% 100%, 41% 58%, 0 50%, 41% 40%)
+}
+
+@keyframes drift {
+    to {
+        transform: translate(9px, -21px);
+        opacity: .18
+    }
+}
+
+main {
+    position: relative
+}
+
+.hero,
+#mekar,
+.gift,
+footer {
+    position: relative;
+    display: grid;
+    place-items: center
+}
+
+.hero {
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    isolation: isolate
+}
+
+.moon {
+    position: absolute;
+    left: 71%;
+    top: 16%;
+    width: clamp(60px, 7vw, 106px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 33% 61%, #d8c9ae66 0 8%, transparent 10%), radial-gradient(circle at 66% 34%, #dacbb344 0 12%, transparent 15%), radial-gradient(circle at 38% 35%, #fff8df, #ecddc0 68%, #cfbfaa);
+    box-shadow: 0 0 20px #ffedc32b, 0 0 70px 30px #f3d6af18
+}
+
+h1 {
+    z-index: 1;
+    margin: 0 0 4vh;
+    font-weight: 400;
+    text-align: center;
+    font-size: clamp(64px, 11vw, 174px);
+    letter-spacing: -.075em;
+    line-height: 1.05;
+    text-shadow: 0 4px 30px #12223566
+}
+
+h1 em {
+    font-weight: 400;
+    color: #f6d5cc
+}
+
+#hills,
+#meadow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none
+}
+
+#hills {
+    height: 36%
+}
+
+.scroll {
+    position: absolute;
+    bottom: 5%;
+    border: 1px solid #f6e7d556;
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    color: var(--cream);
+    text-decoration: none
+}
+
+#mekar {
+    min-height: 92vh;
+    background: linear-gradient(#142c32, transparent 27%);
+}
+
+#flowers {
+    width: min(94%, 620px);
+    height: auto
+}
+
+.gift {
+    min-height: 65vh;
+    padding: 30px 20px
+}
+
+form {
+    background: #202f3edc;
+    border: 1px solid #bcae974f;
+    border-radius: 100px 100px 20px 20px;
+    width: min(100%, 385px);
+    padding: 38px clamp(24px, 5vw, 46px) 43px;
+    text-align: center;
+    box-shadow: inset 0 0 0 7px #253442, inset 0 0 0 8px #cfbfa522
+}
+
+.ornament {
+    color: #eec8a4;
+    font-size: 28px
+}
+
+h2 {
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 14px 0 26px
+}
+
+input,
+button,
+.garden {
+    font: 500 16px system-ui, sans-serif
+}
+
+input,
+form button {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    padding: 13px 16px
+}
+
+input {
+    background: #142435;
+    color: #fff3e2;
+    border: 1px solid #89929c70
+}
+
+input::placeholder {
+    color: #bac3ca
+}
+
+button,
+.garden {
+    cursor: pointer;
+}
+
+form button {
+    margin-top: 12px;
+    background: #f2c5be;
+    color: #33252a;
+    border: 0
+}
+
+footer {
+    height: 49vh;
+    min-height: 300px;
+    padding-bottom: 60px;
+    isolation: isolate
+}
+
+.garden {
+    color: var(--cream);
+    padding: 15px 23px;
+    border: 1px solid #d2c7ab88;
+    border-radius: 50px;
+    background: #192b36;
+    text-decoration: none;
+    z-index: 1
+}
+
+.garden span {
+    margin-left: 10px
+}
+
+#meadow {
+    height: 50%
+}
+
+dialog {
+    width: min(97vw, 650px);
+    max-height: 90vh;
+    border: 0;
+    padding: 15px;
+    background: transparent;
+    color: var(--cream);
+    text-align: center;
+}
+
+dialog::backdrop {
+    background: #060a14cc;
+    backdrop-filter: blur(4px)
+}
+
+body:has(dialog[open]) {
+    overflow: hidden
+}
+
+dialog[open] canvas {
+    animation: present .85s cubic-bezier(.2, .9, .35, 1.13) both
+}
+
+#bouquet {
+    width: 100%;
+    height: min(68vh, 620px);
+    object-fit: contain
+}
+
+#dedication {
+    margin: 0 0 15px;
+    overflow-wrap: anywhere;
+    font-style: italic
+}
+
+#close {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    z-index: 1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff5;
+    background: #172534;
+    color: #fff1de;
+    font-size: 25px
+}
+
+@keyframes present {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.65) rotate(-6deg)
+    }
+}
+
+:focus-visible {
+    outline: 3px solid #ffe0ab;
+    outline-offset: 4px
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important
+    }
+}
+
+#sound {
+    position: absolute;
+    top: 1.3rem;
+    right: clamp(1rem, 5vw, 4rem);
+    padding: .55rem 1rem;
+    color: var(--cream);
+    background: #192b36;
+    border: 1px solid #d2c7ab88;
+    border-radius: 2rem;
+    font-size: .85rem
+}
+
+#mekar {
+    padding-top: 3.4rem
+}
+
+#audioStatus {
+    position: absolute;
+    right: 5%;
+    top: 3.9rem;
+    max-width: min(90%, 330px);
+    font: 14px/1.4 system-ui;
+    color: #ffe6d5;
+    background: #182b3a;
+    border-radius: 9px
+}
+
+#audioStatus:not(:empty) {
+    padding: 8px 12px;
+    z-index: 2
+}

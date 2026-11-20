@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b30">
+  <title>Taman Tulip</title>
+  <link rel="stylesheet" href="beranda.css">
+  <script defer src="beranda.js"></script>
+</head>
+
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <main>
+    <section class="hero" aria-labelledby="judul">
+      <audio id="piano" autoplay loop preload="auto">
+        <source src="piano.wav" type="audio/wav">
+        <source src="piano.mp3" type="audio/mpeg">
+      </audio>
+      <span id="audioStatus" role="status"></span>
+
+      <div class="moon" aria-hidden="true"></div>
+      <h1 id="judul">Taman <em>Tulip</em></h1>
+      <canvas id="hills" aria-hidden="true"></canvas>
+      <a class="scroll" href="#mekar" aria-label="Gulir ke bunga yang bermekaran">↓</a>
+    </section>
+
+    <section id="mekar" aria-label="Mawar dan tulip bermekaran">
+      <canvas id="flowers" width="760" height="640" role="img"
+        aria-label="Enam mawar dan enam tulip pastel bermekaran bertahap"></canvas>
+    </section>
+    <section class="gift">
+      <form id="giftForm">
+        <span class="ornament" aria-hidden="true">✧</span>
+        <h2><label for="name">Masukan nama</label></h2>
+        <input id="name" type="text" placeholder="Nama kamu" required maxlength="50" autocomplete="given-name">
+        <button>Mulai</button>
+      </form>
+    </section>
+    <footer><a class="garden" href="taman.html">Masuk ke Taman Tulip <span aria-hidden="true">↗</span></a>
+      <canvas id="meadow" aria-hidden="true"></canvas>
+    </footer>
+  </main>
+  <dialog id="giftDialog" aria-labelledby="dedication">
+    <button id="close" aria-label="Tutup buket">×</button>
+    <canvas id="bouquet" width="640" height="680" role="img"
+      aria-label="Buket empat belas bunga mawar dan tulip pastel dengan pita merah muda"></canvas>
+    <h2 id="dedication"></h2>
+  </dialog>
+</body>
+
+</html>
